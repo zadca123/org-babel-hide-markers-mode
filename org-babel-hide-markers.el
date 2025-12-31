@@ -64,7 +64,7 @@ hidden, otherwise only the markers themselves are hidden leaving an empty line."
                  (1- (line-beginning-position))
                (line-beginning-position)))
         (end (line-end-position)))
-  (put-text-property beg end 'invisible visibility)))
+    (put-text-property beg end 'invisible visibility)))
 
 (defun org-babel-hide-markers--update-markers (visibility)
   "Update invisible property to VISIBILITY for markers in the current buffer."
