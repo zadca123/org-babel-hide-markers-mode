@@ -81,9 +81,10 @@ hidden, otherwise only the markers themselves are hidden leaving an empty line."
   (unless (derived-mode-p 'org-mode)
     (error "Not in org-mode"))
   (cond (org-babel-hide-markers-mode
-         (org-babel-hide-markers--update-markers nil))
-        (t (font-lock-ensure)
-           (org-babel-hide-markers--update-markers t))))
+         (font-lock-ensure)
+         (org-babel-hide-markers--update-markers t))
+        (t (org-babel-hide-markers--update-markers nil)))
+  )
 
 (provide 'org-babel-hide-markers)
 
